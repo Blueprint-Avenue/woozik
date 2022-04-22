@@ -9,13 +9,13 @@ function Search({ search, setSearch }) {
 				value={search}
 				onChange={(e) => setSearch(e.target.value)}
 				className="bg-[#346751] text-[#ECDBBA] border-none lg:w-full focus:ring-0 outline-none placeholder-[#ECDBBA] text-xs"
-				placeholder="Search Sounds..."
+				placeholder="Search Woozik..."
 			/>
 			<div className="flex items-center divide-dotted divide-x-2 divide-[#161616] ml-auto">
 				<div className="flex space-x-2 pr-5 ">
-					<button className="tag">Minimal</button>
-					<button className="tag">House</button>
-					<button className="tag">Maximum</button>
+					<button className="tag">R&B</button>
+					<button className="tag">Hip-Hop</button>
+					<button className="tag">Gospel</button>
 				</div>
 				<div className="flex items-center space-x-1.5 text-[#ECDBBA] pl-4">
 					<MdOutlineShortText className="text-2xl animate-pulse" />
