@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Dashboard from "../components/Dashboard";
 
 export default function Home() {
 	return (
@@ -10,7 +11,8 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<h1>Wooozijkk</h1>
+			{/* Dashboard */}
+			<Dashboard />
 		</div>
 	);
 }
