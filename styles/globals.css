@@ -6,4 +6,7 @@
     .sidebarIcon {
         @apply h-6 text-[#ECDBBA] cursor-pointer;
     }
+    .tag{
+        @apply py-1.5 px-3 text-[#ECDBBA] rounded-xl text-xs font-bold border-2 border-[#161616]
+    }
 }
