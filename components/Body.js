@@ -4,7 +4,7 @@ import Search from "./Search";
 import Poster from "./Poster";
 import useSpotify from "./hooks/useSpotify";
 
-function Body() {
+function Body({ chooseTrack }) {
 	const spotifyApi = useSpotify();
 	const { data: session } = useSession();
 	const [search, setSearch] = useState("");
@@ -69,20 +69,24 @@ function Body() {
 			<Search search={search} setSearch={setSearch} />
 			<div className="grid overflow-y-scroll scrollbar-hide h-96 py-4 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8 p-4">
 				{searchResults.length === 0
-					? newReleases.slice(0, 8).map((track) => (
-							<Poster
-								key={track.id}
-								track={track}
-								// chooseTrack={chooserTrack}
-							/>
-					  ))
-					: searchResults.slice(0, 8).map((track) => (
-							<Poster
-								key={track.id}
-								track={track}
-								// chooseTrack={chooserTrack}
-							/>
-					  ))}
+					? newReleases
+							.slice(0, 6)
+							.map((track) => (
+								<Poster
+									key={track.id}
+									track={track}
+									chooseTrack={chooseTrack}
+								/>
+							))
+					: searchResults
+							.slice(0, 6)
+							.map((track) => (
+								<Poster
+									key={track.id}
+									track={track}
+									chooseTrack={chooseTrack}
+								/>
+							))}
 			</div>
 		</section>
 	);
