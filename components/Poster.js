@@ -33,6 +33,10 @@ function Poster({ track, chooseTrack }) {
 						<BsFillPlayFill className="text-xl ml-[1px]" />
 					)}
 				</div>
+				<div className="text-[15px]">
+					<h4 className="font-extrabold truncate w-44">{track.title}</h4>
+					<h6>{track.artist}</h6>
+				</div>
 			</div>
 		</div>
 	);
