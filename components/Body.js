@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Search from "./Search";
 import Poster from "./Poster";
 import useSpotify from "./hooks/useSpotify";
+import Track from "./Track";
 
 function Body({ chooseTrack }) {
 	const spotifyApi = useSpotify();
@@ -66,7 +67,10 @@ function Body({ chooseTrack }) {
 
 	return (
 		<section className="bg-[#C84B31] ml-24 py-4 space-y-8 md:max-w-6xl flex-grow md:mr-2.5 ">
+			{/* Search Bar */}
 			<Search search={search} setSearch={setSearch} />
+
+			{/* Poster Boards */}
 			<div className="grid overflow-y-scroll scrollbar-hide h-96 py-4 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8 p-4">
 				{searchResults.length === 0
 					? newReleases
@@ -87,6 +91,52 @@ function Body({ chooseTrack }) {
 									chooseTrack={chooseTrack}
 								/>
 							))}
+			</div>
+			{/* Main Section */}
+			<div className="flex gap-x-8 absolute min-w-full md:relative ml-6">
+				{/* Genres */}
+				<div className="hidden xl:inline max-w-[270px]">
+					<h2 className="text-[#ECDBBA] font-bold mb-3">Genres</h2>
+					<div className="flex gap-x-2 gap-y-2.5 flex-wrap mb-3">
+						<div className="genre">Classic</div>
+						<div className="genre">R&B</div>
+						<div className="genre">Gospel</div>
+						<div className="genre">Hip-hop</div>
+						<div className="genre">Reggae</div>
+						<div className="genre">Chillout</div>
+						<div className="genre">Blues</div>
+						<div className="genre">Jazz</div>
+						<div className="genre">Worldwide</div>
+					</div>
+					<button className="btn">All Genres</button>
+				</div>
+				{/* Tracks - New Releases */}
+				<div>
+					<h2 className="text-[#ECDBBA] font-bold mb-3">
+						{searchResults.length === 0 ? "New Releases" : "Tracks"}
+					</h2>
+					<div className="space-y-3 border-2 border-[#161616] rounded-2xl p-3 bg-[#346751] overflow-y-scroll h-[1000px] md:h-96 scrollbar-thin scrollbar-thumb-orange-200 scrollbar-thumb-rounded hover:scrollbar-thumb-orange-100 w-[830px]">
+						{searchResults.length === 0
+							? newReleases
+									.slice(6, newReleases.length)
+									.map((track) => (
+										<Track
+											key={track.id}
+											track={track}
+											chooseTrack={chooseTrack}
+										/>
+									))
+							: searchResults
+									.slice(6, searchResults.length)
+									.map((track) => (
+										<Track
+											key={track.id}
+											track={track}
+											chooseTrack={chooseTrack}
+										/>
+									))}
+					</div>
+				</div>
 			</div>
 		</section>
 	);
