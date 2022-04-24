@@ -15,7 +15,7 @@ function Dashboard() {
 		<main className="flex min-h-screen min-w-max bg-[#C84B31] lg:pb-24">
 			<LeftSideBar />
 			<Body chooseTrack={chooseTrack} />
-			<RightSideBar />
+			<RightSideBar chooseTrack={chooseTrack} />
 		</main>
 	);
 }

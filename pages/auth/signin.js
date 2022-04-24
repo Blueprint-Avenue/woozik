@@ -7,16 +7,16 @@ import img from "../../Assets/Wu.png";
 import Loader from "../../components/Loader";
 
 function Signin({ providers }) {
-	// const { data: session } = useSession();
-	// const router = useRouter();
+	const { data: session } = useSession();
+	const router = useRouter();
 
-	// useEffect(() => {
-	// 	if (session) {
-	// 		router.push("/");
-	// 	}
-	// }, [session]);
+	useEffect(() => {
+		if (session) {
+			router.push("/");
+		}
+	}, [session]);
 
-	// if (session) return <Loader />;
+	if (session) return <Loader />;
 
 	return (
 		<div className="bg-[#346751] h-screen flex flex-col items-center pt-40 space-y-8">
