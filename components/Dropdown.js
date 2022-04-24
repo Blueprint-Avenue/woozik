@@ -3,8 +3,6 @@ import { Fragment } from "react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { LogoutIcon } from "@heroicons/react/outline";
 import { signOut, useSession } from "next-auth/react";
-import useSpotify from "./hooks/useSpotify";
-import react from "react";
 
 export default function Dropdown() {
 	const { data: session } = useSession();
@@ -12,7 +10,7 @@ export default function Dropdown() {
 	return (
 		<Menu as="div" className="w-24 h-12 relative flex items-center">
 			<div className="w-full absolute right-1 group">
-				<Menu.Button className="flex items-center w-full px-4 py-3 text-sm font-medium text-white bg-[#161616] rounded-full hover:bg-[#346751]">
+				<Menu.Button className="flex items-center w-full px-4 py-3 text-sm font-medium text-[#ECDBBA] bg-[#161616] rounded-full hover:bg-[#346751]">
 					<ChevronDownIcon className="h-6 text-[#ECDBBA]" aria-hidden="true" />
 					<img
 						src={session.user.image}
@@ -36,7 +34,7 @@ export default function Dropdown() {
 							{({ active }) => (
 								<button
 									className={`${
-										active && "bg-[#346751]/10"
+										active && "bg-[#161616]/10"
 									} group flex rounded-md items-center w-full px-2 py-2 text-sm font-semibold tracking-wide text-[#ECDBBA] cursor-default`}
 									onClick={() => signOut({ redirect: false })}
 								>
