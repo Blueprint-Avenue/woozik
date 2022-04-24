@@ -14,7 +14,6 @@ import {
 	VolumeUpIcon,
 } from "@heroicons/react/solid";
 import { debounce } from "lodash";
-import { BsVolumeDown } from "react-icons/bs";
 
 function Player({ trackUri, chooseTrack }) {
 	const { data: session } = useSession();
