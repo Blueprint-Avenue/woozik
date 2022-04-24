@@ -74,7 +74,7 @@ function Body({ chooseTrack }) {
 			<div className="grid overflow-y-scroll scrollbar-hide h-96 py-4 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8 p-4">
 				{searchResults.length === 0
 					? newReleases
-							.slice(0, 6)
+							.slice(0, 9)
 							.map((track) => (
 								<Poster
 									key={track.id}
@@ -83,7 +83,7 @@ function Body({ chooseTrack }) {
 								/>
 							))
 					: searchResults
-							.slice(0, 6)
+							.slice(0, 9)
 							.map((track) => (
 								<Poster
 									key={track.id}
@@ -118,7 +118,7 @@ function Body({ chooseTrack }) {
 					<div className="space-y-3 border-2 border-[#161616] rounded-2xl p-3 bg-[#346751] overflow-y-scroll h-[1000px] md:h-96 scrollbar-thin scrollbar-thumb-orange-200 scrollbar-thumb-rounded hover:scrollbar-thumb-orange-100 w-[830px]">
 						{searchResults.length === 0
 							? newReleases
-									.slice(6, newReleases.length)
+									.slice(9, newReleases.length)
 									.map((track) => (
 										<Track
 											key={track.id}
@@ -127,7 +127,7 @@ function Body({ chooseTrack }) {
 										/>
 									))
 							: searchResults
-									.slice(6, searchResults.length)
+									.slice(9, searchResults.length)
 									.map((track) => (
 										<Track
 											key={track.id}

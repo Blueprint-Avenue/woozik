@@ -14,7 +14,7 @@ function Track({ track, chooseTrack }) {
 	const handlePlay = () => {
 		chooseTrack(track);
 
-		if (track.uri === playingTrack.uri) {
+		if (track.uri === playingTrack?.uri) {
 			setPlay(!play);
 		}
 	};
@@ -50,7 +50,7 @@ function Track({ track, chooseTrack }) {
 						}`}
 						onClick={() => setHasLiked(!hasLiked)}
 					/>
-					{track.uri === playingTrack.uri && play ? (
+					{track.uri === playingTrack?.uri && play ? (
 						<div className="h-10 w-10 rounded-full border border-[#C84B31] flex items-center justify-center absolute -right-0.5 bg-[#C84B31] icon hover:scale-110 text-[#ECDBBA]">
 							<BsFillPauseFill className=" text-[#ECDBBA]text-xl" />
 						</div>
